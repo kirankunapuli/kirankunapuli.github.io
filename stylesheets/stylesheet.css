@@ -7,7 +7,7 @@ body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #606c71; }
+  color: inherit; }
 
 a {
   color: #1e6bb8;
@@ -18,7 +18,7 @@ a {
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   background-color: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.2);
   border-style: solid;
@@ -29,9 +29,9 @@ a {
     margin-left: 1rem; }
 
 .btn:hover {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.2);
+  color: #155799;
+  text-decoration: inherit;
+  background-color: rgba(255, 255, 255, 0.9);
   border-color: rgba(255, 255, 255, 0.3); }
 
 @media screen and (min-width: 64em) {
@@ -90,7 +90,7 @@ a {
 .project-tagline {
   margin-bottom: 2rem;
   font-weight: normal;
-  opacity: 0.7; }
+  opacity: 0.8; }
 
 @media screen and (min-width: 64em) {
   .project-tagline {
