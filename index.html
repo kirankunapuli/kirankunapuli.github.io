@@ -37,8 +37,8 @@
     <section class="main-content">
 
         <h3>Technically Sophisticated Professional with <span id="time_span"></span> years <span id="month_span"></span>
-            months of experience in Python, R Language, Talend and Spotfire.<br>
-            <br>Kaggle Competitions Expert. Best rank 624 out of 133,419. 1 Silver & 4 Bronze medals.<br>
+            months of IT experience with <span id="ds_time_span"></span>+years in Data Science.<br>
+            <br>Kaggle Competitions Expert. Best rank 557 out of 139,958. 1 Silver & 5 Bronze medals.<br>
             <br>Kaggle Kernels Expert. Best rank 247 out of 101,411. 1 Gold, 1 Silver & 3 Bronze medals.<br>
             <br>Ranked among top 50 in user rankings on AnalyticsVidhya. Best rank 39 out of 8,711.<br></h3>
 
@@ -52,12 +52,12 @@
             models in R and Python, developing ETL jobs in Talend and creating visualizations in Spotfire.</p>
 
         <p class="para_align">Performed model building by implementing various algorithms such as LightGBM, XGBoost &
-            Time Series modelling using ARIMA, FB Prophet & Deep Learning models using Convolutional Neural Network and
-            Recurrent Neural Network (LSTM) & tools like H2O.</p>
+            Time Series modelling using ARIMA, FB Prophet & Deep Learning models using CNN, BERT
+             & tools like AWS, Amazon Sagemaker.</p>
 
         <p class="para_align">Expertise in using Python packages such as pandas, numpy, scikit-learn, lightgbm, xgboost, bayesianoptimization,
                 matplotlib & R packages such as dplyr, ggplot2, stringR, rpart, forecast, jsonlite,
-                RPostgreSQL & Deep learning packages such as fast.ai, keras & ML tools like H2O and Pysparkling.</p>
+                RPostgreSQL & Deep learning packages such as fast.ai, twnsorflow, transfromers & ML tools like Amazon Sagemaker.</p>
 
         <p class="para_align">Deft at mapping the requirements and custom designing the solutions for the
             applications.</p>
@@ -66,12 +66,12 @@
             technologies.</p>
 
         <p class="para_align">When not making a difference in the world, I spend a significant amount of leisure time
-            watching TV shows or by playing Battlefield 1 on my PC.
+            watching TV shows or by playing Apex Legends.
             <br>
             <a target="_blank" href="https://trakt.tv/users/kirankunapuli">What I am watching right
                 now! <i class="fa fa-television" aria-hidden="true"></i></a>
             <br>
-            <a target="_blank" href="https://battlefieldtracker.com/bf1/profile/pc/Narik_KvsK">My Battlefield 1 gaming
+            <a target="_blank" href="https://apex.tracker.gg/apex/profile/origin/Narik_KvsK">My Apex Legends gaming
                 stats! <i class="fa fa-trophy" aria-hidden="true"></i></a></p>
 
         <p>Peace! <i class="fa fa-hand-peace-o" aria-hidden="true"></i></p>
@@ -103,6 +103,22 @@
 
         document.getElementById('time_span').innerHTML = age;
         document.getElementById('month_span').innerHTML = month + 12;
+    </script>
+    
+    <script>
+        var doJ_ds = new Date(2016, 06, 15, 0, 0, 0, 0);
+        var currentDate = new Date();
+        var ds_age = currentDate.getFullYear() - doJ_ds.getFullYear();
+        var ds_month = currentDate.getMonth() - doJ_ds.getMonth();
+        var ds_day = currentDate.getDate() - doJ_ds.getDate();
+
+        if (ds_month < 0 || ds_month === 0) {
+            ds_age--;
+        } else if (ds_month < 0 && ds_day < 0) {
+            ds_month = ds_month + 12;
+        }
+
+        document.getElementById('ds_time_span').innerHTML = ds_age;
     </script>
 
     <script>
