@@ -1,0 +1,87 @@
+/* CSS Variables for light/dark mode toggle */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+:root {
+    --background-color: #121212;
+    --text-color: #E0E0E0;
+    --header-color: #159957;
+    --section-title-color: #03DAC6;
+    --link-color: #159957;
+}
+
+.light-mode {
+    --background-color: #FFFFFF;
+    --text-color: #000000;
+    --header-color: #159957;
+    --section-title-color: #018786;
+    --link-color: #159957;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+header h1 {
+    color: var(--header-color);
+}
+
+section {
+    margin-bottom: 10px;
+}
+
+section h2 {
+    color: var(--section-title-color);
+    border-bottom: 2px solid var(--section-title-color);
+    padding-bottom: 10px;
+}
+
+.contact a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    color: var(--background-color);
+    background-color: rgba(117, 242, 104, 0.70);
+    border-color: rgba(117, 242, 104, 0.08);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-style: solid;
+    border-width: 1px;
+}
+
+@media (max-width: 600px) {
+    .theme-toggle {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
