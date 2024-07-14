@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Calculate ds_age
-    const doJ_ds = new Date("2016-07-15T00:00:00.000+05:30");
+    const doJ_ds = new Date("2016-07-01T00:00:00.000+05:30");
     calculateAgeAndMonthDifference(doJ_ds, 'ds_time_span', null);
 
     // Calculate age and month for main date
