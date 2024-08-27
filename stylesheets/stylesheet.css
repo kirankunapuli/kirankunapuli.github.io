@@ -246,3 +246,18 @@ a {
 
 .para_align {
   text-align: justify }
+
+/* Add dark mode styles */
+body.dark-mode {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.dark-mode .page-header {
+    background-color: var(--header-color);
+}
+
+.dark-mode .btn {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.8);
+}
