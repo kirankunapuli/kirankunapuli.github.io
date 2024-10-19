@@ -105,3 +105,21 @@ section h2 {
     background-color: rgba(255, 255, 255, 0.9);
     border-color: rgba(255, 255, 255, 0.3);
 }
+
+/* Ensure consistent spacing among buttons for dark and light themes */
+.dark-mode .btn + .btn, .light-mode .btn + .btn {
+    margin-left: 1rem;
+}
+
+@media screen and (max-width: 42em) {
+    .dark-mode .btn, .light-mode .btn {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    .dark-mode .btn + .btn, .light-mode .btn + .btn {
+        margin-top: 1rem;
+        margin-left: 0;
+    }
+}

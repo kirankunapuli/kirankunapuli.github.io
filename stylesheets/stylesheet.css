@@ -261,3 +261,28 @@ body.dark-mode {
     background-color: rgba(255, 255, 255, 0.08);
     color: rgba(255, 255, 255, 0.8);
 }
+
+/* Add light mode styles */
+body.light-mode {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+.light-mode .page-header {
+    background-color: var(--header-color-light);
+}
+
+.light-mode .btn {
+    background-color: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 42em) {
+  .light-mode .btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.9rem; }
+    .light-mode .btn + .btn {
+      margin-top: 1rem;
+      margin-left: 0; } }
