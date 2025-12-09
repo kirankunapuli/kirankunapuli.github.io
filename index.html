@@ -4,322 +4,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kunapuli Venkata Sai Kiran</title>
+    <meta name="description"
+        content="Kiran Kunapuli - Applied AI ML Lead, Vice President at JPMorgan Chase & Co. Portfolio and Resume.">
+    <title>Kiran Kunapuli | Applied AI ML Lead</title>
+
     <link rel="shortcut icon" type="image/png" href="https://avatars0.githubusercontent.com/u/11577436?s=58&v=4" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/dark-mode.css" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/styles.min.css" media="screen">
     <script src="javascripts/main.js" type="text/javascript" defer></script>
 </head>
 
 <body>
-    <section class="page-header">
-        <h1 class="project-name">Kunapuli Venkata Sai Kiran</h1>
-        <h3 class="project-tagline">Applied AI ML Lead, Vice President at JPMorgan Chase & Co, Hyderabad</h2>
-            <a target="_blank" href="https://github.com/kirankunapuli" class="btn">
-                <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-            <a target="_blank" href="https://in.linkedin.com/in/kirankunapuli" class="btn">
-                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
-            <a target="_blank" href="https://www.kaggle.com/kirankunapuli" class="btn">
-                <i class="fa-brands fa-kaggle" aria-hidden="true"></i> Kaggle</a>
-            <a target="_blank" href="https://bit.ly/kiran-online-resume" class="btn">
-                <i class="fa-regular fa-address-card" aria-hidden="true"></i> Résumé</a>
-            <a target="_blank" href="https://medium.com/@kirankunapuli" class="btn">
-                <i class="fa-brands fa-medium" aria-hidden="true"></i> Medium</a>
-            <a target="_blank" href="https://twitter.com/KiranKunapuli" class="btn">
-                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> Twitter</a>
+    <!-- Background Animation Canvas -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Navigation -->
+    <header id="main-header">
+        <div class="container nav-flex">
+            <div class="logo">Venkata Sai <span class="text-gradient">Kiran</span> Kunapuli<span
+                    class="text-gradient">.</span></div>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-dashboard">
+            <div class="hero-text">
+                <span class="tagline">Hello, I'm <span class="text-gradient">Kiran</span></span>
+                <h1 style="white-space: nowrap;">Building the Future with <br><span class="text-gradient">Artificial
+                        Intelligence</span></h1>
+                <ul class="hero-bio-list">
+                    <li><span class="highlight-box">Applied AI ML Lead, Vice President</span> at <strong>JPMorgan
+                            Chase, Hyderabad, India</strong>.</li>
+                    <li><span class="highlight-box"><span id="total-exp">12+ Years</span> of total IT experience</span>
+                        including <span class="highlight-box"><span id="ds-exp">9+ Years</span> in Data Science</span>
+                        and <strong>4 Years in Technical Leadership</strong>.</li>
+                    <li>Specializing in Architecting <strong>Agentic AI</strong>, <strong>LLM Solutions</strong>, and
+                        driving <strong>High-Impact & High-Scale Production Deployments</strong>.</li>
+                </ul>
+
+                <!-- Hero Socials -->
+                <div class="hero-socials-row">
+                    <a href="mailto:kirankunapuli@duck.com" title="Email"><i class="fa-regular fa-envelope"></i>
+                        Email</a>
+                    <a href="https://in.linkedin.com/in/kirankunapuli/" target="_blank" title="LinkedIn"><i
+                            class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                    <a href="https://github.com/kirankunapuli" target="_blank" title="GitHub"><i
+                            class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="https://huggingface.co/kirankunapuli" target="_blank" title="HuggingFace"><i
+                            class="fa-regular fa-face-smile-beam"></i> HuggingFace</a>
+                    <a href="https://www.kaggle.com/kirankunapuli" target="_blank" title="Kaggle"><i
+                            class="fa-brands fa-kaggle"></i> Kaggle</a>
+                    <a href="https://medium.com/@kirankunapuli" target="_blank" title="Medium"><i
+                            class="fa-brands fa-medium"></i> Medium</a>
+                </div>
+            </div>
+
+            <!-- Bento Grid Dashboard -->
+            <div class="hero-bento">
+                <!-- Resume Button (Prominent) -->
+                <a href="data/Kiran-Kunapuli-Resume-202512.pdf" target="_blank" class="glance-card wide"
+                    style="text-decoration: none; align-items: center; text-align: center; border-color: var(--accent-secondary);">
+                    <div class="glance-value" style="font-size: 1.2rem;"><i class="fa-regular fa-file-pdf"></i> View
+                        Resume</div>
+                    <div class="glance-sub">Download PDF</div>
+                </a>
+
+                <div class="glance-card">
+                    <span class="glance-label">Total Experience</span>
+                    <div class="glance-value" id="bento-total-exp">12+ Years</div>
+                    <div class="glance-sub"><span id="bento-ds-exp">9+ Years</span> in Data Science</div>
+                </div>
+
+                <div class="glance-card">
+                    <span class="glance-label">Current Role</span>
+                    <div class="glance-value">Vice President</div>
+                    <div class="glance-sub">Applied AI ML Lead</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator"
+            onclick="document.getElementById('experience').scrollIntoView({behavior: 'smooth'})">
+            <span style="font-size: 0.9rem; margin-bottom: 0.5rem; display: block; opacity: 0.7;">Scroll for
+                Experience</span>
+            <i class="fa-solid fa-chevron-down bounce"></i>
+        </div>
     </section>
 
-    <section class="main-content">
+    <!-- Experience Section -->
+    <section id="experience" class="container" style="padding-top: 4rem;">
+        <h2 class="text-gradient">Professional Experience</h2>
 
-        <h2 id="profile">PROFILE</h2>
-        <p class="para_align">Experienced <strong>Data Science Professional</strong> with <strong><span
-                    id="time_span"></span> years <span id="month_span"></span>
-                months</strong> of IT experience with <strong><span id="ds_time_span"></span>+ years</strong> in Data
-            Science projects, currently
-            <strong>working</strong> in a high-performing team at <strong>JPMorgan Chase & Co</strong>, Hyderabad.
-            Kaggle
-            Competitions <strong>Expert</strong> &amp; Kaggle Kernels <strong>Expert</strong>.
-        </p>
-        <ul>
-            <li>2024 - Present: <strong>Applied AI ML Lead</strong> at <strong>JPMorgan Chase & Co</strong>, Hyderabad
-            </li>
-            <li>2021 - 2024: <strong>Senior Lead Data Scientist</strong> at <strong>Tokopedia</strong>, Hyderabad</li>
-            <li>2019 - 2021: <strong>Data Scientist</strong> at <strong>ADP</strong>, Hyderabad</li>
-            <li>2017 - 2019: <strong>Data Scientist</strong> at <strong>DBS Bank</strong>, Hyderabad</li>
-            <li>2013 - 2017: <strong>Software Engineer</strong> at <strong>Tech Mahindra</strong>, Hyderabad</li>
-        </ul>
+        <div class="timeline">
+            <!-- JPMC -->
+            <div class="timeline-item visible">
+                <div class="timeline-dot"></div>
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-role">Applied AI ML Lead - Vice President</div>
+                            <div class="job-company">JPMorgan Chase</div>
+                        </div>
+                        <div class="job-date">Jul 2024 - Present</div>
+                    </div>
+                    <ul
+                        style="list-style-type: disc; margin-left: 1.5rem; margin-top: 1rem; color: var(--text-secondary); line-height: 1.6;">
+                        <li style="margin-bottom: 0.5rem;">Architected and <strong>delivered</strong> a
+                            <strong>multi-agent AI marketing automation assistant</strong> using
+                            <strong>LangGraph</strong>, <strong>AWS Bedrock</strong> and <strong>Claude Sonnet
+                                4.5</strong>. Built <strong>agentic RAG</strong> workflows for semantic search, data
+                            retrieval, query reframing, feature engineering, SQL generation and modeling support,
+                            <strong>cutting campaign time-to-market</strong> from <strong>4 weeks to 5 days</strong>.
+                        </li>
+                        <li><strong>Led</strong> the <strong>Account Engagement (CTR)</strong> model for Digital
+                            Intelligence (CCB Digital), integrating <strong>70M+</strong> daily transactions with
+                            customer behavior signals across credit, debit and banking activity, delivering a
+                            <strong>35% engagement lift</strong>.
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-        <h2 id="skills--abilities">SKILLS &amp; ABILITIES</h2>
-        <p class="para_align"><strong>Data Science, Machine Learning, Deep Learning, Python</strong>, R,
-            <strong>AWS</strong> (EC2, Lambda, Sagemaker), <strong>GCP</strong> (Vertex AI), MLOps, SQL, <strong>NLP,
-                Gen AI</strong> (Prompt Engineering, RAG), <strong>LLMs</strong> (PaLM 2, <strong>Llama 2</strong>),
-            <strong>ML Frameworks</strong> (Keras, Tensorflow, Flask, <strong>LlamaIndex</strong>), <strong>Vector
-                Databases</strong> (Milvus, <strong>ChromaDB</strong>), <strong>Technical Leadership</strong>, Team
-            Management
-        </p>
-        <h2 id="professional-experience">PROFESSIONAL EXPERIENCE</h2>
-        <p class="para_align"><strong>JPMorgan Chase & Co | Applied AI ML Lead</strong> | Jul 2024 - Present |
-            Hyderabad,
-            India</p>
-        <ul class="para_align">
-            <li><strong>Personalization and Customer Insights, CCB Digital</strong></li>
-            <ul>
-                <li>Currently working in a high-performing team at <strong>JPMorgan Chase & Co</strong>, Hyderabad.</li>
-                <li>Building Account Engagement <strong>(CTR)</strong> and Origination <strong>(CVR)</strong> ML models
-                    for <strong>Personalization</strong> and <strong>Customer Insights</strong>,
-                    Digital Intelligence project in <strong>Customer Acquisition</strong> and <strong>Marketing</strong>
-                    team, <strong>CCB Digital</strong>.</li>
-            </ul>
-            </li>
-        </ul>
-        <p class="para_align"><strong>Tokopedia | Data Science Senior Lead</strong> | Jan 2023 - Jul 2024 | Hyderabad,
-            India</p>
-        <ul class="para_align">
-            <li><strong>Search Ads - TopAds</strong>
-                <ul>
-                    <li>Led <strong>2 data science projects</strong> - <strong>Ads Ranking</strong> and
-                        <strong>Keyword Recommendation,</strong> and managed <strong>4 data scientists</strong>,
-                        and contributed to various DS initiatives that have benefited the <strong>Ads DS</strong>
-                        team and <strong>GoTo DS</strong>.
-                    </li>
-                    <li>Consistently delivered <strong>high-quality</strong> data science solutions for TopAds business
-                        problems and contributed positively to Tokopedia&#39;s <strong>revenue</strong> by using
-                        <strong>Gen AI</strong> (Vertex AI - <strong>PaLM 2 LLM</strong>) for Augmented Ad title
-                        generation for products with low/no impressions and Product Keyword creation for products with
-                        low keyword supply.
-                    </li>
-                    <li>Oversaw <strong>research</strong> and <strong>development</strong> projects at various stages
-                        ranging from initial <strong>exploration</strong> to <strong>deployment</strong> into production
-                        systems. </li>
-                    <li>Collaborated with <strong>engineering teams</strong> to integrate successful <strong>A/B
-                            tested</strong> ML models into <strong>large-scale</strong> and <strong>highly
-                            complex</strong> production services.</li>
-                </ul>
-            </li>
-        </ul>
-        <p class="para_align"><strong>Tokopedia | Principal Data Scientist</strong> | Dec 2021 - Dec 2022 | Hyderabad,
-            India</p>
-        <ul class="para_align">
-            <li><strong>Real-time Ads Ranking - TopAds</strong>
-                <ul>
-                    <li>Worked on building a product, user and query <strong>context-aware Real-time Ads
-                            Ranking</strong> (RTR) system.</li>
-                    <li>Developed a tree-based Learning-to-Rank model to increase the relevancy of ads displayed on the
-                        search results page ( <strong>SRP</strong> ) which enabled the Real-time Ranking system to
-                        achieve a <strong>3.25%</strong> increase in <strong>CTR</strong>, <strong>1.57%</strong>
-                        increase in <strong>Ads
-                            Revenue (~1.6 billion IDR)</strong>, while maintaining the system level
-                        <strong>ROAS</strong> &gt;=7.
-                    </li>
-                    <li>Deployed a highly scalable, <strong>low latency</strong> and high throughput model inference
-                        pipeline for Real-time Ranking system to achieve <strong>sub 80 ms</strong> latency with
-                        <strong>1K requests</strong> served per second.
-                    </li>
-                    <li>Optimised inference of an existing deep learning solution using post-training quantization
-                        techniques which increased revenue by <strong>1.43%</strong> (~1 billion IDR monthly) and saved
-                        inference costs up to <strong>166 million</strong> IDR monthly.</li>
-                </ul>
-            </li>
-        </ul>
-        <p class="para_align"><strong>ADP | Data Scientist</strong> | Nov 2019 - Dec 2021 | Hyderabad, India</p>
-        <p class="para_align">Worked as a <strong>Data Scientist</strong> in the <strong>ADP DataCloud team</strong>
-            building machine learning models for Job Classification and PayCode Classification.</p>
-        <ul class="para_align">
-            <li class="para_align"><strong>Job Classification - ADP DataCloud</strong></li>
-            <ul>
-                <li>Technologies: Python 3, Machine Learning - NLP, Classification, AWS, Amazon Sagemaker</li>
-                <li>The Job classification model normalises the client-entered jobs to standard <strong>ADP Job
-                        Taxonomies</strong> , which enables the
-                    <strong>benchmarking</strong> of an organization&#39;s workforce metrics against industry
-                    benchmarks in ADP DataCloud.
-                </li>
-                <li>Built <strong>multi-lingual</strong> Job Classification for French &amp; Spanish using Language
-                    Agnostic BERT ( <strong>LaBSE</strong> ) &amp; multi-lingual Universal Sentence Encoder (
-                    <strong>mUSE</strong> ) in a Tensorflow Keras model &amp; <strong>reduced time to
-                        market</strong> from 6 to 2 months.
-                </li>
-                <li>Developed a <strong>multi-class classifier</strong> using a Keras model using FastText word
-                    embeddings on Amazon Sagemaker and
-                    productionised it using Step Functions, ECR, Sagemaker Endpoint and API Gateway.</li>
-                <li>Deployed the model as both <strong>batch transform</strong> and <strong>real-time
-                        endpoint</strong>.</li>
-            </ul>
-            </li>
-            <br>
-            <li class="para_align"><strong>PayCode Classification, ADP DataCloud</strong></li>
-            <ul>
-                <li>Technologies: Python 3, Machine Learning - NLP, Classification, AWS, Databricks</li>
-                <li>The PayCode classification model provides <strong>paycode group</strong> and <strong>paycode
-                        subgroup</strong> for the text entered by the end user while submitting their timesheet,
-                    which powers the workforce trends analytics and reporting in ADP DataCloud.</li>
-                <li>Developed a <strong>multi-class classifier</strong> using FastText on Amazon Sagemaker and
-                    productionised it using AWS Batch, Step
-                    Functions, ECR, Sagemaker Endpoint and API Gateway.</li>
-                <li>Deployed the model as both <strong>batch transform</strong> and <strong>real-time
-                        endpoint</strong>.</li>
-            </ul>
-            </li>
-        </ul>
-        <p class="para_align"><strong>DBS | Data Scientist</strong> | Oct 2017 - Oct 2019 | Hyderabad, India</p>
-        <p class="para_align">Worked as a <strong>Data Scientist</strong> in the <strong>Core Banking division</strong>
-            and built machine
-            learning models for Self-Service Banking - Cash In Transit and Cheque Analytics.</p>
-        <ul class="para_align">
-            <li><strong>Cheque Analytics - Self-Service Banking</strong></li>
-            <ul>
-                <li>Technologies: Python 3, PySpark 2.3, Machine Learning - Classification</li>
-                <li>The <strong>Cheque Risk Scoring model</strong> provides a risk score for all inward cheques
-                    using the historic cheque attribute data and customer information dealing with class imbalance
-                    using SMOTE/TomekLinks.</li>
-                <li>Developed <strong>binary classifier</strong> using <strong>LightGBM</strong> for Cheque Risk Scoring
-                    model to provide a risk score
-                    for all inward cheques using the historic cheque attribute data and customer information.</li>
-                <li>Reduced false negatives by <strong>18%</strong> through effective handling of <strong>class
-                        imbalance</strong> using SMOTE and TomekLinks and derived the best
-                    <strong>hyperparameters</strong> for the model using Bayesian Hyperparameter Optimisation.
-                </li>
-            </ul>
-            </li>
-            <br>
-            <li><strong>Cash In Transit (CIT)- Self-Service Banking</strong></li>
-            <ul>
-                <li>Technologies: Python 3, PySpark 2.3, Machine Learning - Time Series Forecasting</li>
-                <li>Forecasting of "<strong>no cash</strong>" situations for different types of ATM, BTM &amp; CRS
-                    machines in PySpark.</li>
-                <li>Developed a <strong>time-series forecasting</strong> FB Prophet model to forecast ATM, BTM and
-                    CRS cash withdrawals and backtesting of models against real results to tweak the model
-                    accordingly to optimize error, resulting in a <strong>15% reduction</strong> in cash shortage
-                    incidents.
-                </li>
-            </ul>
-            </li>
-        </ul>
-        <p class="para_align"><strong>Tech Mahindra | Software Engineer</strong> | Nov 2013 - Oct 2017 | Hyderabad,
-            India
-        </p>
-        <p class="para_align">Worked as a <strong>Software Engineer</strong> for <strong>General Electric (GE)</strong>
-            client in 4
-            different projects spanning from <strong>data ingestion</strong> to <strong>data science</strong>.</p>
-        <ul class="para_align">
-            <li>Technologies: Python, R, SQL Machine Learning - Time Series Forecasting, Clustering</li>
-            <li>Developed Cash Collection <strong>machine learning model</strong> using Clustering (KMeans), Decision
-                Trees and GE US Payroll model using ARIMA.</li>
-            <li>Converting the JSON Data obtained from APIʼs to <strong>R dataframes</strong> and CSV.</li>
-            <li>Developed dynamic <strong>Talend</strong> jobs for <strong>integration of data</strong> on Oracle,
-                MySQL, Teradata and PostgreSQL databases using Talend components.</li>
-            <li>Created <strong>Stored Procedures</strong> and finished code stubs received from team members.</li>
-        </ul>
-        <h2 id="education">EDUCATION</h2>
-        <p class="para_align"><strong>Electronics and Communications Engineering, GITAM University</strong> | 2009 –
-            2013
-            | Hyderabad, India</p>
-        <ul class="para_align">
-            <li>Bachelor of Technology ( <strong>B.Tech</strong> ) in Electronics and Communications Engineering (
-                <strong>ECE</strong> ) with <strong>8.4 CGPA</strong>
-            </li>
-        </ul>
-        <h2 id="courses">COURSES</h2>
-        <ul>
-            <li class="para_align"><strong>Summer School on NLP, IIIT Hyderabad</strong> | Jun 2024 | Hyderabad, India
-            </li>
-            <ul class="para_align">
-                <li>Attended Summer School on <strong>NLP</strong> with focus on
-                    <strong>Large Language Models (LLM) and Natural Language Generation (NLG)</strong>
-                    conducted by <strong>LTRC, IIIT Hyderabad</strong>
-                </li>
-            </ul>
-            </li>
-            <li class="para_align"><strong>Summer School on CV and DL, IIIT Hyderabad</strong> | Jul 2018 | Hyderabad,
-                India</li>
-            <ul class="para_align">
-                <li>Attended Summer School on <strong>Computer Vision and Deep Learning</strong> across the
-                    conducted by <strong>CVIT, IIIT Hyderabad</strong>
-                </li>
-            </ul>
-            </li>
-        </ul>
-        <h2 id="awards">AWARDS</h2>
-        <ul>
-            <li class="para_align"><strong>Best Summer School Project, IIIT Hyderabad</strong> | Jul 2024 </li>
-            <ul class="para_align">
-                <li>Awarded <strong>2nd place</strong> for <strong>Continued Pre-training of LLM on Legal
-                        Contracts</strong> -
-                    LLM Domain Adaptation project at <strong>Summer
-                        School on NLP</strong>, IIIT Hyderabad
-                </li>
-            </ul>
-            </li>
-            <li class="para_align"><strong>Super Techie, DBS</strong> | Dec 2018 </li>
-            <ul class="para_align">
-                <li>Awarded the Pride Connect Award for being the <strong>Super Techie</strong> at
-                    <strong>C2E</strong> , Consumer Banking Analytics
-                </li>
-            </ul>
-            </li>
-            <li class="para_align"><strong>Workplace Catalyst, DBS</strong> | Jul 2018 </li>
-            <ul class="para_align">
-                <li>Awarded for being a part of the team which is <strong>Workplace Catalyst</strong> across the
-                    whole <strong>DBS Tech</strong> Organisation</li>
-            </ul>
-            </li>
-        </ul>
+            <!-- Tokopedia -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-role">Senior Lead Data Scientist</div>
+                            <div class="job-company">Tokopedia</div>
+                        </div>
+                        <div class="job-date">Dec 2021 - Jul 2024</div>
+                    </div>
+                    <ul
+                        style="list-style-type: disc; margin-left: 1.5rem; margin-top: 1rem; color: var(--text-secondary); line-height: 1.6;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Led</strong> 2 data science projects - <strong>Ads
+                                Ranking</strong> and <strong>Keyword Recommendation</strong>, managed 4 data scientists
+                            and delivered high-quality data science solutions for TopAds business problems.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Developed Real-time Ads Ranking (RTR)</strong>
+                            system, achieving <strong>3.25% increase</strong> in <strong>CTR</strong>, <strong>1.57%
+                                increase</strong> in <strong>Ads Revenue</strong> (~1.6 billion IDR) and deployed
+                            scalable, low latency model inference pipeline, to achieve <strong>sub 80 ms</strong>
+                            latency with <strong>1K requests</strong> served per second.</li>
+                        <li><strong>Optimised inference</strong> of an existing deep learning solution using
+                            post-training quantization techniques which increased revenue by <strong>1.43%</strong> (1.4
+                            billion IDR monthly) and saved inference costs up to <strong>166 million IDR
+                                monthly</strong>.</li>
+                    </ul>
+                </div>
+            </div>
 
+            <!-- ADP -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-role">Data Scientist</div>
+                            <div class="job-company">ADP</div>
+                        </div>
+                        <div class="job-date">Nov 2019 - Dec 2021</div>
+                    </div>
+                    <ul
+                        style="list-style-type: disc; margin-left: 1.5rem; margin-top: 1rem; color: var(--text-secondary); line-height: 1.6;">
+                        <li style="margin-bottom: 0.5rem;">Built machine learning models for <strong>Job
+                                Classification</strong> and <strong>PayCode Classification</strong> in the <strong>ADP
+                                DataCloud</strong> team.</li>
+                        <li style="margin-bottom: 0.5rem;">Implemented <strong>multi-lingual</strong> Job Classification
+                            model using Language Agnostic BERT (LaBSE) & multi-lingual Universal Sentence Encoder
+                            (mUSE), <strong>reducing time to market</strong> from 6 to 2 months.</li>
+                        <li>Deployed models on AWS using Step Functions, ECR, Sagemaker Endpoint and API Gateway as
+                            <strong>batch transform</strong> pipelines and <strong>real-time endpoints</strong>, scaling
+                            <strong>model serving</strong> capacity by <strong>3x</strong> to handle increased inference
+                            requests.
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
+            <!-- DBS -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-role">Data Scientist</div>
+                            <div class="job-company">DBS Bank</div>
+                        </div>
+                        <div class="job-date">Oct 2017 - Oct 2019</div>
+                    </div>
+                    <ul
+                        style="list-style-type: disc; margin-left: 1.5rem; margin-top: 1rem; color: var(--text-secondary); line-height: 1.6;">
+                        <li style="margin-bottom: 0.5rem;">Built machine learning models for <strong>Cash In
+                                Transit</strong> and <strong>Cheque Analytics</strong> in the <strong>Self-Service
+                                Banking</strong>, CBG group.</li>
+                        <li style="margin-bottom: 0.5rem;">Implemented <strong>binary classifier</strong> using LightGBM
+                            for Cheque Risk Scoring model, to provide a <strong>risk score</strong> for all inward
+                            cheques, reduced <strong>false negatives</strong> by <strong>18%</strong> through effective
+                            handling of <strong>class imbalance</strong>.</li>
+                        <li>Forecasted <strong>no-cash</strong> situations for ATM, BTM, and CRS cash withdrawals using
+                            FB Prophet for <strong>time-series</strong> forecasting, resulting in a <strong>15%
+                                reduction</strong> in cash shortage incidents.</li>
+                    </ul>
+                </div>
+            </div>
 
+            <!-- Tech Mahindra -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-role">Software Engineer</div>
+                            <div class="job-company">Tech Mahindra</div>
+                        </div>
+                        <div class="job-date">Nov 2013 - Oct 2017</div>
+                    </div>
+                    <ul
+                        style="list-style-type: disc; margin-left: 1.5rem; margin-top: 1rem; color: var(--text-secondary); line-height: 1.6;">
+                        <li style="margin-bottom: 0.5rem;">Worked as a <strong>Software Engineer</strong> for
+                            <strong>General Electric (GE)</strong> client in 4 different projects spanning from
+                            <strong>data ingestion</strong> to <strong>data science</strong>.
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">Engineered a Cash Collection <strong>ML</strong> model using
+                            <strong>clustering</strong> to segment customers based on payment behavior, <strong>decision
+                                trees</strong> to predict the likelihood of timely payments and GE US Payroll model
+                            using <strong>ARIMA</strong>.
+                        </li>
+                        <li>Integrated JSON data from APIs to <strong>R</strong> dataframes and CSV, developed
+                            <strong>Talend</strong> jobs for data integration.
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-        <p class="para_align">When not making a difference in the world, I spend a significant amount of leisure time
-            <a target="_blank" href="https://trakt.tv/users/kirankunapuli">watching TV shows <i class="fa-solid fa-tv"
-                    aria-hidden="true"></i></a> or
-            <a target="_blank" href="https://apex.tracker.gg/apex/profile/origin/Narik_KvsK">playing Apex Legends.<i
-                    class="fa-solid fa-trophy" aria-hidden="true"></i></a>
-        </p>
-
-        <p class="para_align">Lets connect on <a target="_blank" href="https://in.linkedin.com/in/kirankunapuli">
-                LinkedIn <i class="fa-brands fa-linkedin"></i></a>. Peace! <i class="fa-regular fa-hand-peace"
-                aria-hidden="true"></i></p>
-
-        <footer class="site-footer">
-            <span class="site-footer-owner">This webpage is maintained by
-                <a target="_blank" href="https://github.com/kirankunapuli">kirankunapuli</a>.</span>
-
-            <span class="site-footer-credits">This page was generated by
-                <a target="_blank" href="https://pages.github.com">GitHub Pages</a> using the
-                <a target="_blank" href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by
-                <a target="_blank" href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-        </footer>
-
+        </div>
     </section>
 
-    <button class="theme-toggle" onclick="toggleMode()"><i class="fa-solid fa-lightbulb"></i></button>
-    <script>
-        // Check for saved user preference or system preference
-        const savedTheme = localStorage.getItem('theme');
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    <!-- Technical Skills Section -->
+    <section class="container" style="padding-bottom: 4rem;">
+        <h2 class="text-gradient">Technical Skills</h2>
 
-        // Set the initial theme based on saved preference or system preference
-        if (savedTheme) {
-            document.body.classList.add(savedTheme);
-        } else {
-            document.body.classList.add(systemTheme);
-        }
+        <div class="skills-category">
+            <h3>Machine Learning & GenAI</h3>
+            <div class="skills-grid">
+                <div class="skill-tag">Supervised Learning</div>
+                <div class="skill-tag">Unsupervised Learning</div>
+                <div class="skill-tag">NLP</div>
+                <div class="skill-tag">GenAI (Agents, RAG)</div>
+                <div class="skill-tag">LLMs</div>
+            </div>
+        </div>
 
-        function toggleMode() {
-            const body = document.body;
-            body.classList.toggle('light-mode');
-            body.classList.toggle('dark-mode');
+        <div class="skills-category">
+            <h3>Frameworks & Languages</h3>
+            <div class="skills-grid">
+                <div class="skill-tag">TensorFlow</div>
+                <div class="skill-tag">Keras</div>
+                <div class="skill-tag">Flask</div>
+                <div class="skill-tag">LangChain</div>
+                <div class="skill-tag">LangGraph</div>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">R</div>
+                <div class="skill-tag">SQL</div>
+            </div>
+        </div>
 
-            // Save the user's preference in localStorage
-            const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
-            localStorage.setItem('theme', currentTheme);
-        }
-    </script>
+        <div class="skills-category">
+            <h3>Tools & Cloud</h3>
+            <div class="skills-grid">
+                <div class="skill-tag">AWS (EC2, Lambda, SageMaker, Bedrock)</div>
+                <div class="skill-tag">GCP (Vertex AI)</div>
+                <div class="skill-tag">Databricks</div>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <h3>MLOps & Databases</h3>
+            <div class="skills-grid">
+                <div class="skill-tag">Model Deployment</div>
+                <div class="skill-tag">CI/CD</div>
+                <div class="skill-tag">Docker</div>
+                <div class="skill-tag">MLflow</div>
+                <div class="skill-tag">MySQL</div>
+                <div class="skill-tag">Milvus</div>
+                <div class="skill-tag">ChromaDB</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education, Courses & Awards -->
+    <section class="container" style="padding-bottom: 2rem;">
+        <div class="bento-grid-2">
+            <!-- Column 1: Education & Courses -->
+            <div>
+                <h2 class="text-gradient">Education</h2>
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-role">Bachelor of Technology (B.Tech)</div>
+                            <div class="job-company">GITAM University</div>
+                        </div>
+                        <div class="job-date">2009 - 2013</div>
+                    </div>
+                    <p>Electronics and Communications Engineering (ECE). Graduated with <strong>8.4 CGPA</strong>.</p>
+                </div>
+
+                <h2 class="text-gradient" style="margin-top: 2rem;">Courses</h2>
+
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-role">Summer School on NLP</div>
+                            <div class="job-company">IIIT Hyderabad</div>
+                        </div>
+                        <div class="job-date">Jun 2024</div>
+                    </div>
+                    <p>Attended Summer School on <strong>NLP</strong> with focus on <strong>Large Language Models (LLM)
+                            and Natural Language Generation (NLG)</strong> conducted by <strong>LTRC, IIIT
+                            Hyderabad</strong>.</p>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-role">Summer School on CV and DL</div>
+                            <div class="job-company">IIIT Hyderabad</div>
+                        </div>
+                        <div class="job-date">Jul 2018</div>
+                    </div>
+                    <p>Attended Summer School on <strong>Computer Vision and Deep Learning</strong> conducted by
+                        <strong>CVIT, IIIT Hyderabad</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Column 2: Awards -->
+            <div>
+                <h2 class="text-gradient">Awards</h2>
+
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-role">Best Summer School Project</div>
+                            <div class="job-company">IIIT Hyderabad</div>
+                        </div>
+                        <div class="job-date">Jul 2024</div>
+                    </div>
+                    <p>Awarded <strong>2nd place</strong> for <strong>Continued Pre-training of LLM on Legal
+                            Contracts</strong> - LLM Domain Adaptation project.</p>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-role">Super Techie</div>
+                            <div class="job-company">DBS Bank</div>
+                        </div>
+                        <div class="job-date">Dec 2018</div>
+                    </div>
+                    <p>Awarded the Pride Connect Award for being the <strong>Super Techie</strong> at
+                        <strong>C2E</strong>, Consumer Banking Analytics.
+                    </p>
+                </div>
+
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-role">Workplace Catalyst</div>
+                            <div class="job-company">DBS Bank</div>
+                        </div>
+                        <div class="job-date">Jul 2018</div>
+                    </div>
+                    <p>Awarded for being a part of the team which is <strong>Workplace Catalyst</strong> across the
+                        whole <strong>DBS Tech</strong> Organisation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun / Personal Section -->
+    <section class="container" style="padding-bottom: 2rem; text-align: center;">
+        <div class="personal-interests-container">
+            <h2 class="text-gradient" style="margin-bottom: 1.5rem; font-size: 1.8rem;">Personal Interests</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+                When not making a difference in the world, I spend a significant amount of leisure time
+            </p>
+
+            <div class="personal-links">
+                <a href="https://trakt.tv/users/kirankunapuli" target="_blank" class="personal-link-item">
+                    <i class="fa-solid fa-tv"></i> Watching TV Shows
+                </a>
+                <span style="opacity: 0.5; align-self: center;">or</span>
+                <a href="https://apex.tracker.gg/apex/profile/origin/Narik_KvsK" target="_blank"
+                    class="personal-link-item">
+                    <i class="fa-solid fa-gamepad"></i> Playing Apex Legends
+                </a>
+            </div>
+
+            <p style="font-size: 1.1rem; margin-top: 2rem; opacity: 0.8;">
+                Lets connect on <a href="https://in.linkedin.com/in/kirankunapuli" target="_blank"
+                    style="color: var(--text-primary); text-decoration: none;"><span
+                        style="color: var(--accent-primary);">LinkedIn</span>
+                    <i class="fa-brands fa-linkedin"></i></a>.
+            </p>
+            <div style="margin-top: 1rem; font-size: 1.5rem;">
+                Peace! <i class="fa-regular fa-hand-peace"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Designed & Built by <a href="https://in.linkedin.com/in/kirankunapuli" target="_blank"
+                    style="color: var(--accent-primary); text-decoration: none;">Kiran Kunapuli</a> extended by <a
+                    href="https://antigravity.google/" target="_blank"
+                    style="color: var(--accent-primary); text-decoration: none;">Antigravity</a></p>
+            <div style="font-size: 1.5rem; margin-top: 1rem;">
+                <a href="https://github.com/kirankunapuli" style="margin: 0 10px;"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://in.linkedin.com/in/kirankunapuli" style="margin: 0 10px;"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/KiranKunapuli" style="margin: 0 10px;"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
