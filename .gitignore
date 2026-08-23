@@ -1,4 +1,6 @@
-
-*.xml
-*.iml
+# macOS
 .DS_Store
+
+# IntelliJ IDEA
+*.iml
+.idea/
