@@ -2,24 +2,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- theme management ---
     const toggleButton = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('theme');
-    // const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; // Removed as per instruction
+    // Theme already applied pre-paint via inline script in <head>; sync body class + icon here.
+    const savedTheme = document.documentElement.dataset.theme || 'dark';
 
     function setTheme(themeName) {
         document.body.classList.remove('light-mode', 'dark-mode');
-        document.documentElement.setAttribute('data-theme', themeName);
+        document.documentElement.dataset.theme = themeName;
         localStorage.setItem('theme', themeName);
 
-        // Update Icon
-        const icon = toggleButton.querySelector('i');
+        // Icon visibility handled by CSS via [data-theme] on <html>
         if (themeName === 'light') {
             document.body.classList.add('light-mode');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
         } else {
             document.body.classList.add('dark-mode');
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
         }
     }
 
@@ -28,14 +23,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (toggleButton) {
         toggleButton.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const currentTheme = document.documentElement.dataset.theme;
             setTheme(currentTheme === 'light' ? 'dark' : 'light');
+            document.dispatchEvent(new CustomEvent('themechange'));
         });
     }
 
 
     // --- scroll animations ---
-    // Header Scroll Effect
+    // --- Header Scroll Effect ---
     const header = document.getElementById('main-header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -43,19 +39,30 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             header.classList.remove('scrolled');
         }
-    });
+    }, { passive: true });
 
     // --- Constellation Animation ---
     const canvas = document.getElementById('neural-canvas');
-    if (canvas) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (canvas && !prefersReducedMotion) {
         const ctx = canvas.getContext('2d');
         let width, height;
         let particles = [];
 
         // Configuration
-        const particleCount = 60; // Minimalist count
+        const particleCount = 85; // Denser constellation
         const connectionDistance = 150;
         const mouseDistance = 200;
+
+        // Cached theme colors (avoid getComputedStyle per particle per frame)
+        let colors = { textPrimary: '#fff', accentPrimary: '#4fc3f7', textTertiary: '#888' };
+
+        function refreshColors() {
+            const style = getComputedStyle(document.body);
+            colors.textPrimary = style.getPropertyValue('--text-primary').trim();
+            colors.accentPrimary = style.getPropertyValue('--accent-primary').trim();
+            colors.textTertiary = style.getPropertyValue('--text-tertiary').trim();
+        }
 
         // Mouse State
         let mouse = { x: null, y: null };
@@ -70,7 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
             mouse.y = null;
         });
 
-        // Resize
+        // Resize (debounced)
+        let resizeTimer;
         function resize() {
             width = window.innerWidth;
             height = window.innerHeight;
@@ -79,7 +87,13 @@ document.addEventListener('DOMContentLoaded', function () {
             initParticles();
         }
 
-        window.addEventListener('resize', resize);
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(resize, 200);
+        });
+
+        // Re-read colors when theme changes
+        document.addEventListener('themechange', refreshColors);
 
         class Particle {
             constructor() {
@@ -100,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             draw() {
-                ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--text-primary').trim();
+                ctx.fillStyle = colors.textPrimary;
                 ctx.globalAlpha = 0.2; // Very subtle
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -127,10 +141,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (mouse.x != null) {
                     let dx = mouse.x - p.x;
                     let dy = mouse.y - p.y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    let distance = Math.hypot(dx, dy);
                     if (distance < mouseDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--accent-primary').trim();
+                        ctx.strokeStyle = colors.accentPrimary;
                         ctx.globalAlpha = 1 - (distance / mouseDistance);
                         ctx.lineWidth = 1;
                         ctx.moveTo(p.x, p.y);
@@ -144,12 +158,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     let p2 = particles[j];
                     let dx = p.x - p2.x;
                     let dy = p.y - p2.y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    let distance = Math.hypot(dx, dy);
 
                     if (distance < connectionDistance) {
                         ctx.beginPath();
-                        // Use accent color for connections
-                        ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--text-tertiary').trim();
+                        ctx.strokeStyle = colors.textTertiary;
                         ctx.globalAlpha = (1 - (distance / connectionDistance)) * 0.15; // Very subtle
                         ctx.lineWidth = 0.5;
                         ctx.moveTo(p.x, p.y);
@@ -162,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
             requestAnimationFrame(animate);
         }
 
+        refreshColors();
         resize();
         animate();
     }
@@ -169,13 +183,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Intersection Observer for Timeline
     const observerOptions = {
-        threshold: 0.2,
-        rootMargin: "0px"
+        threshold: 0.05,
+        rootMargin: "0px 0px -40px 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            // Reveal when entering viewport OR already scrolled past (fast scroll / anchor jump)
+            if (entry.isIntersecting || entry.boundingClientRect.bottom < 60) {
                 entry.target.classList.add('visible');
                 observer.unobserve(entry.target); // Only animate once
             }
@@ -186,6 +201,28 @@ document.addEventListener('DOMContentLoaded', function () {
     timelineItems.forEach(item => {
         observer.observe(item);
     });
+
+    // Scroll-reveal for section blocks (skills, education, awards, personal)
+    const revealTargets = document.querySelectorAll(
+        '.skills-category, .bento-grid-2 > div > .job-card, .personal-interests-container'
+    );
+    revealTargets.forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+        // Safety: reveal anything already scrolled past (above viewport) on load
+        if (el.getBoundingClientRect().bottom < 0) {
+            el.classList.add('visible');
+            observer.unobserve(el);
+        }
+    });
+
+    // --- Scroll Indicator ---
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', () => {
+            document.getElementById('experience').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
 
     // --- Dynamic Experience Calculation ---
     function updateExperience() {

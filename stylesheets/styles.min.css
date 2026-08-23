@@ -109,7 +109,7 @@ canvas#neural-canvas {
   text-decoration: none;
 }
 
-.hero-socials-row a i {
+.hero-socials-row a svg {
   font-size: 1.2rem;
 }
 
@@ -240,14 +240,17 @@ header {
   z-index: 100;
   padding: 1.5rem 0;
   transition: var(--transition-smooth);
-  backdrop-filter: blur(10px);
-  background: rgba(var(--bg-deep), 0.5);
-  /* simplified for now, tricky with var */
+  /* Fully transparent at top - no blur, no bg */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: transparent;
   border-bottom: 1px solid transparent;
 }
 
 header.scrolled {
   padding: 1rem 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   background: rgba(5, 5, 17, 0.8);
   border-bottom: 1px solid var(--border-glass);
 }
@@ -326,7 +329,7 @@ header.scrolled {
 }
 
 .hero-text {
-  animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .hero-bento {
@@ -334,8 +337,7 @@ header.scrolled {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
-  animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s;
-  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) both 0.2s;
 }
 
 .glance-card {
@@ -572,6 +574,20 @@ header.scrolled {
   transform: translateY(0);
 }
 
+/* Scroll-reveal for section blocks (same feel as timeline) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: auto;
+}
+
 .timeline-dot {
   position: absolute;
   left: -4px;
@@ -683,10 +699,24 @@ footer {
 .theme-toggle {
   background: transparent;
   border: none;
+  padding: 0;
   color: var(--text-primary);
   font-size: 1.2rem;
   cursor: pointer;
   transition: transform 0.3s;
+}
+
+/* Icon switching: moon in dark, sun in light */
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle .icon-sun {
+  display: inline-block;
+}
+
+[data-theme="light"] .theme-toggle .icon-moon {
+  display: none;
 }
 
 .theme-toggle:hover {
@@ -718,6 +748,12 @@ footer {
   z-index: 10;
   opacity: 0.8;
   transition: var(--transition-snappy);
+  /* Reset native button chrome */
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
 }
 
 .scroll-indicator:hover {
@@ -847,4 +883,124 @@ html,
 body {
   overflow-x: hidden;
   max-width: 100vw;
+}
+
+/* Inline SVG icon sizing (replaces Font Awesome) */
+svg[viewBox] {
+  height: 1em;
+  width: auto;
+  vertical-align: -0.125em;
+  display: inline-block;
+}
+
+.hero-socials-row a svg,
+.theme-toggle svg,
+.personal-link-item svg {
+  font-size: 1.2rem;
+}
+
+/* Extracted utility classes (moved from inline styles) */
+.hero-title {
+  white-space: nowrap;
+}
+
+.resume-card {
+  text-decoration: none;
+  align-items: center;
+  text-align: center;
+  border-color: var(--accent-secondary);
+}
+
+.glance-value-sm {
+  font-size: 1.2rem;
+}
+
+.scroll-indicator-label {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  opacity: 0.7;
+}
+
+.section-pt {
+  padding-top: 4rem;
+}
+
+.job-bullets {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.job-bullet-item {
+  margin-bottom: 0.5rem;
+}
+
+.section-pb-lg {
+  padding-bottom: 4rem;
+}
+
+.section-pb {
+  padding-bottom: 2rem;
+}
+
+.heading-mt {
+  margin-top: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.personal-heading {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.personal-intro {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.personal-or {
+  opacity: 0.5;
+  align-self: center;
+}
+
+.personal-connect {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
+.personal-peace {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.connect-link {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+.footer-link {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.footer-socials {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-social-link {
+  margin: 0 10px;
 }
