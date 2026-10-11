@@ -211,17 +211,33 @@
                         <div class="job-date">Jul 2024 - Present</div>
                     </div>
                     <ul class="job-bullets">
-                        <li class="job-bullet-item">Architected and <strong>delivered</strong> a
-                            <strong>multi-agent AI marketing automation assistant</strong> using
-                            <strong>LangGraph</strong>, <strong>AWS Bedrock</strong> and <strong>Claude Sonnet
-                                4.5</strong>. Built <strong>agentic RAG</strong> workflows for semantic search, data
-                            retrieval, query reframing, feature engineering, SQL generation and modeling support,
-                            <strong>cutting campaign time-to-market</strong> from <strong>4 weeks to 5 days</strong>.
+                        <li class="job-bullet-item">Developed the <strong>Chase Customer Foundational Model</strong>
+                            as part of an org-wide initiative, pre-training a transformer on <strong>52B+</strong>
+                            card, deposit, digital and offer events from <strong>95M+</strong> customers with
+                            masked, next-event, time-gap and contrastive objectives on <strong>24 H100 GPUs</strong>
+                            (<strong>Ray</strong>, 3 nodes). Built the training data and evaluated the
+                            <strong>512-d customer embeddings</strong> as features for downstream tasks, starting with
+                            <strong>L1 offer ranking</strong>.
                         </li>
-                        <li><strong>Led</strong> the <strong>Account Engagement (CTR)</strong> model for Digital
-                            Intelligence (CCB Digital), integrating <strong>70M+</strong> daily transactions with
-                            customer behavior signals across credit, debit and banking activity, delivering a
-                            <strong>35% engagement lift</strong>.
+                        <li><strong>Re-architected L1 offer ranking</strong> by benchmarking <strong>8+</strong>
+                            deep recommender and contextual-bandit models (<strong>DLRM, DCN-V2, NeuralUCB,
+                                MoE</strong>); the best model <strong>doubled CTR</strong> over the
+                            <strong>LinUCB</strong> baseline in offline policy evaluation and is queued for an online
+                            <strong>A/B test</strong>.
+                        </li>
+                        <li><strong>Built a multi-agent marketing assistant</strong> (<strong>LangGraph</strong>,
+                            <strong>AWS Bedrock</strong>, <strong>agentic RAG</strong>) that turns business questions
+                            into SQL and model plans; cut discovery time <strong>98%</strong> and campaign
+                            time-to-market from <strong>4 weeks to 5 days</strong>.
+                        </li>
+                        <li><strong>Built the Account Origination Model</strong> retraining pipeline on
+                            <strong>Databricks, MLflow and Unity Catalog</strong>, automating monthly releases across
+                            <strong>49 products</strong> with champion/challenger model promotion.
+                        </li>
+                        <li><strong>Built Karpathy-inspired AutoResearch</strong> for LLM-driven experiment loops,
+                            adopted by other teams; contributed to <strong>Casper</strong>, a multi-agent AI
+                            assistant connecting <strong>Databricks, Jira, AWS</strong> and <strong>6 more</strong>
+                            enterprise tools.
                         </li>
                     </ul>
                 </div>
@@ -344,49 +360,54 @@
         <h2 class="text-gradient">Technical Skills</h2>
 
         <div class="skills-category">
-            <h3>Machine Learning & GenAI</h3>
+            <h3>GenAI & Agents</h3>
             <div class="skills-grid">
-                <div class="skill-tag">Supervised Learning</div>
-                <div class="skill-tag">Unsupervised Learning</div>
-                <div class="skill-tag">NLP</div>
-                <div class="skill-tag">GenAI (Agents, RAG)</div>
                 <div class="skill-tag">LLMs</div>
+                <div class="skill-tag">Agentic RAG</div>
+                <div class="skill-tag">Context Engineering</div>
+                <div class="skill-tag">Multi-agent Systems</div>
+                <div class="skill-tag">MCP</div>
+                <div class="skill-tag">Fine-tuning (LoRA, PEFT)</div>
             </div>
         </div>
 
         <div class="skills-category">
-            <h3>Frameworks & Languages</h3>
+            <h3>ML & DL</h3>
             <div class="skills-grid">
-                <div class="skill-tag">TensorFlow</div>
-                <div class="skill-tag">Keras</div>
-                <div class="skill-tag">Flask</div>
-                <div class="skill-tag">LangChain</div>
-                <div class="skill-tag">LangGraph</div>
+                <div class="skill-tag">RecSys & Ranking</div>
+                <div class="skill-tag">NLP</div>
+                <div class="skill-tag">Classification</div>
+                <div class="skill-tag">Regression</div>
+                <div class="skill-tag">Forecasting</div>
+                <div class="skill-tag">Embeddings</div>
+                <div class="skill-tag">Foundation Models</div>
+                <div class="skill-tag">A/B Testing</div>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <h3>Languages & Frameworks</h3>
+            <div class="skills-grid">
                 <div class="skill-tag">Python</div>
                 <div class="skill-tag">R</div>
                 <div class="skill-tag">SQL</div>
+                <div class="skill-tag">PyTorch</div>
+                <div class="skill-tag">TensorFlow</div>
+                <div class="skill-tag">Hugging Face</div>
+                <div class="skill-tag">scikit-learn</div>
+                <div class="skill-tag">LangGraph</div>
+                <div class="skill-tag">LangChain</div>
             </div>
         </div>
 
         <div class="skills-category">
-            <h3>Tools & Cloud</h3>
+            <h3>Cloud & MLOps</h3>
             <div class="skills-grid">
-                <div class="skill-tag">AWS (EC2, Lambda, SageMaker, Bedrock)</div>
+                <div class="skill-tag">AWS (Bedrock, SageMaker)</div>
                 <div class="skill-tag">GCP (Vertex AI)</div>
-                <div class="skill-tag">Databricks</div>
-            </div>
-        </div>
-
-        <div class="skills-category">
-            <h3>MLOps & Databases</h3>
-            <div class="skills-grid">
-                <div class="skill-tag">Model Deployment</div>
-                <div class="skill-tag">CI/CD</div>
-                <div class="skill-tag">Docker</div>
-                <div class="skill-tag">MLflow</div>
-                <div class="skill-tag">MySQL</div>
-                <div class="skill-tag">Milvus</div>
-                <div class="skill-tag">ChromaDB</div>
+                <div class="skill-tag">Databricks (MLflow)</div>
+                <div class="skill-tag">PySpark</div>
+                <div class="skill-tag">Ray (Ray Serve)</div>
             </div>
         </div>
     </section>
