@@ -1,4 +1,4 @@
-/* 
+/*
    THEME: NEURAL GLASS (Dec 2025 Edition)
    Author: Antigravity for Kiran Kunapuli
 */
@@ -934,7 +934,7 @@ svg[viewBox] {
   line-height: 1.6;
 }
 
-.job-bullet-item {
+.job-bullets li {
   margin-bottom: 0.5rem;
 }
 

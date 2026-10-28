@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return Math.floor(diffInYears);
         };
 
-        const totalYears = calculateYears(itStartDate);
+        const totalYears = Math.round((now - itStartDate) / (1000 * 60 * 60 * 24 * 365.25));
         const dsYears = calculateYears(dsStartDate);
 
         const totalExpEl = document.getElementById('total-exp');
@@ -245,9 +245,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const bentoTotalExpEl = document.getElementById('bento-total-exp');
         const bentoDsExpEl = document.getElementById('bento-ds-exp');
 
-        if (totalExpEl) totalExpEl.innerText = `${totalYears}+ Years`;
+        if (totalExpEl) totalExpEl.innerText = `${totalYears} Years`;
         if (dsExpEl) dsExpEl.innerText = `${dsYears}+ Years`;
-        if (bentoTotalExpEl) bentoTotalExpEl.innerText = `${totalYears}+ Years`;
+        if (bentoTotalExpEl) bentoTotalExpEl.innerText = `${totalYears} Years`;
         if (bentoDsExpEl) bentoDsExpEl.innerText = `${dsYears}+ Years`;
     }
 

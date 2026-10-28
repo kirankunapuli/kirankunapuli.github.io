@@ -106,11 +106,12 @@
                 <ul class="hero-bio-list">
                     <li><span class="highlight-box">Applied AI ML Lead, Vice President</span> at <strong>JPMorgan
                             Chase, Hyderabad, India</strong>.</li>
-                    <li><span class="highlight-box"><span id="total-exp">12+ Years</span> of total IT experience</span>
-                        including <span class="highlight-box"><span id="ds-exp">9+ Years</span> in Data Science</span>
-                        and <strong>4 Years in Technical Leadership</strong>.</li>
-                    <li>Specializing in Architecting <strong>Agentic AI</strong>, <strong>LLM Solutions</strong>, and
-                        driving <strong>High-Impact & High-Scale Production Deployments</strong>.</li>
+                    <li><span class="highlight-box">Data Science Lead with <span id="total-exp">13 Years</span> in IT,
+                            including <span id="ds-exp">10+ Years</span> in Data Science and <strong>5 years in
+                                technical leadership</strong>.</span></li>
+                    <li>Led a team of <strong>4 data scientists</strong> growing ads revenue; built
+                        <strong>foundation models, ranking and recommendation systems, and AI agents</strong>.
+                    </li>
                 </ul>
 
                 <!-- Hero Socials -->
@@ -170,8 +171,8 @@
 
                 <div class="glance-card">
                     <span class="glance-label">Total Experience</span>
-                    <div class="glance-value" id="bento-total-exp">12+ Years</div>
-                    <div class="glance-sub"><span id="bento-ds-exp">9+ Years</span> in Data Science</div>
+                    <div class="glance-value" id="bento-total-exp">13 Years</div>
+                    <div class="glance-sub"><span id="bento-ds-exp">10+ Years</span> in Data Science</div>
                 </div>
 
                 <div class="glance-card">
@@ -212,32 +213,39 @@
                     </div>
                     <ul class="job-bullets">
                         <li class="job-bullet-item">Developed the <strong>Chase Customer Foundational Model</strong>
-                            as part of an org-wide initiative, pre-training a transformer on <strong>52B+</strong>
-                            card, deposit, digital and offer events from <strong>95M+</strong> customers with
-                            masked, next-event, time-gap and contrastive objectives on <strong>24 H100 GPUs</strong>
-                            (<strong>Ray</strong>, 3 nodes). Built the training data and evaluated the
-                            <strong>512-d customer embeddings</strong> as features for downstream tasks, starting with
-                            <strong>L1 offer ranking</strong>.
+                            as part of an org-wide initiative: a <strong>38M-parameter transformer backbone</strong>
+                            with masked and next-event pre-training. Built training data from <strong>52B+</strong>
+                            card, deposit, digital and offer events within a base of <strong>95M+</strong> customers;
+                            trained on <strong>24 H100 GPUs</strong> (<strong>Ray</strong>, 3 nodes) to generate
+                            <strong>512-d customer embeddings</strong> for downstream risk modeling, fraud detection,
+                            and category selection and ranking.
                         </li>
-                        <li><strong>Re-architected L1 offer ranking</strong> by benchmarking <strong>8+</strong>
-                            deep recommender and contextual-bandit models (<strong>DLRM, DCN-V2, NeuralUCB,
-                                MoE</strong>); the best model <strong>doubled CTR</strong> over the
-                            <strong>LinUCB</strong> baseline in offline policy evaluation and is queued for an online
-                            <strong>A/B test</strong>.
+                        <li><strong>Re-architected and developed the category selection and ranking model</strong>;
+                            evaluated <strong>8 challenger models</strong>, including <strong>SAINT</strong> and
+                            <strong>FT-Transformer</strong>, against contextual-bandit <strong>LinUCB</strong> and
+                            deployed distributed inference on <strong>Ray Serve</strong>.
                         </li>
-                        <li><strong>Built a multi-agent marketing assistant</strong> (<strong>LangGraph</strong>,
-                            <strong>AWS Bedrock</strong>, <strong>agentic RAG</strong>) that turns business questions
-                            into SQL and model plans; cut discovery time <strong>98%</strong> and campaign
-                            time-to-market from <strong>4 weeks to 5 days</strong>.
+                        <li><strong>Migrated and deployed the Account Origination Model</strong> on
+                            <strong>Databricks/MLflow</strong> for <strong>49 products</strong>, with monthly
+                            retraining and champion/challenger releases; moved 95M-customer batch scoring from
+                            <strong>Spark/EMR to Ray Data</strong>, <strong>3.7x faster</strong>.
                         </li>
-                        <li><strong>Built the Account Origination Model</strong> retraining pipeline on
-                            <strong>Databricks, MLflow and Unity Catalog</strong>, automating monthly releases across
-                            <strong>49 products</strong> with champion/challenger model promotion.
+                        <li>Developed the <strong>Marketing Automation Agent</strong>, a
+                            <strong>LangGraph/Bedrock</strong> audience-selection agent translating marketing goals
+                            into catalog-grounded features, SQL and modeling plans through
+                            <strong>multi-query RAG and parallel retrieval</strong>.
                         </li>
-                        <li><strong>Built Karpathy-inspired AutoResearch</strong> for LLM-driven experiment loops,
-                            adopted by other teams; contributed to <strong>Casper</strong>, a multi-agent AI
-                            assistant connecting <strong>Databricks, Jira, AWS</strong> and <strong>6 more</strong>
-                            enterprise tools.
+                        <li>Developed a <strong>customer-level email opt-out risk model</strong> using contact
+                            frequency, engagement and dormancy signals to predict next-week unsubscribes and inform
+                            audience prioritization and contact-policy decisions.
+                        </li>
+                        <li>Fine-tuned <strong>SLMs</strong> to detect paycheck and rent transactions using a
+                            <strong>577K-pattern silver dataset</strong> labeled with <strong>Ministral 3 8B</strong>;
+                            evaluated on human-labeled holdouts to support downstream insight generation.
+                        </li>
+                        <li>Created an <strong>AutoResearch agent</strong> for LLM-driven experiment loops and
+                            co-built <strong>Casper</strong>, a multi-agent VS Code extension for Jira, Confluence and
+                            Bitbucket; both are used by ML and engineering teams across <strong>CCB Digital</strong>.
                         </li>
                     </ul>
                 </div>
@@ -363,11 +371,12 @@
             <h3>GenAI & Agents</h3>
             <div class="skills-grid">
                 <div class="skill-tag">LLMs</div>
+                <div class="skill-tag">SLMs</div>
+                <div class="skill-tag">Fine-tuning (LoRA, PEFT)</div>
                 <div class="skill-tag">Agentic RAG</div>
                 <div class="skill-tag">Context Engineering</div>
                 <div class="skill-tag">Multi-agent Systems</div>
                 <div class="skill-tag">MCP</div>
-                <div class="skill-tag">Fine-tuning (LoRA, PEFT)</div>
             </div>
         </div>
 
@@ -376,11 +385,10 @@
             <div class="skills-grid">
                 <div class="skill-tag">RecSys & Ranking</div>
                 <div class="skill-tag">NLP</div>
-                <div class="skill-tag">Classification</div>
-                <div class="skill-tag">Regression</div>
                 <div class="skill-tag">Forecasting</div>
                 <div class="skill-tag">Embeddings</div>
                 <div class="skill-tag">Foundation Models</div>
+                <div class="skill-tag">Quantization</div>
                 <div class="skill-tag">A/B Testing</div>
             </div>
         </div>
